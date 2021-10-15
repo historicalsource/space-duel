@@ -1,0 +1,1079 @@
+	.TITLE AS2EX3-FOR ASTERIODS 2 
+	.ASECT
+	.RADIX 16
+	.LIST MEB
+	.NLIST BYT
+;**************************************
+;*
+;*PROGRAMMER: OWEN RUBIN
+;*
+;*VAX FILE FOR SPACE DUEL SHIP PICTURES
+;*
+;**************************************
+	.GLOBL SHIPS
+;MUST BE ASECT
+;TAKES PARAMETER, SEE IF THAT MANY MORE BYTES,
+;WILL CROSS A PAGE. IF SO, PADS
+;NECESSARY BYTES.
+	.MACRO CRPAGE,AA
+	...1=.&^H0FF00/^H100	;CURRENT PAGE
+	...2=.+AA-1
+	...3=...2&^H0FF00/^H100 ;NEXT PAGE
+	.IF NE,...1-...3
+	.REPT ...3*^H100-.
+	.BYTE 0
+	.ENDR
+	.ENDC
+	.ENDM
+	
+;	.SBTTL TWBYPIC-TWO BYTE PICTURES
+;	.MACRO TWBYPIC XX,YY,BB,EE
+;	...1=YY&^H7F+EE
+;	...2=2*XX+BB
+;	.BYTE ...1,...2
+;	.ENDM
+	
+	.MACRO TWBYPIC XX,YY,BB,EE
+	.BYTE YY,XX
+	.ENDM
+;	.SBTTL PICEND-END OF PICTURE FLAG
+;	.MACRO PICEND
+;	.BYTE ^H80
+;	.ENDM
+	
+	.MACRO PICEND
+	.ENDM
+	.=^H2800
+SHIPS:	.WORD SHPA0
+	.WORD SHPA1
+	.WORD SHPA2
+	.WORD SHPA3
+	.WORD SHPA4
+	.WORD SHPA5
+	.WORD SHPA6
+	.WORD SHPA7
+	.WORD SHPA8
+	.WORD SHPA9
+	.WORD SHPA10
+	.WORD SHPA11
+	.WORD SHPA12
+	.WORD SHPA13
+	.WORD SHPA14
+	.WORD SHPA15
+	.WORD SHPA16
+	.WORD SHPB0
+	.WORD SHPB1
+	.WORD SHPB2
+	.WORD SHPB3
+	.WORD SHPB4
+	.WORD SHPB5
+	.WORD SHPB6
+	.WORD SHPB7
+	.WORD SHPB8
+	.WORD SHPB9
+	.WORD SHPB10
+	.WORD SHPB11
+	.WORD SHPB12
+	.WORD SHPB13
+	.WORD SHPB14
+	.WORD SHPB15
+	.WORD SHPB16
+	.LENGTH=54.
+.RADIX 10
+	CRPAGE .LENGTH
+SHPA0:
+              TWBYPIC -12 , 20 , 0 , 0 
+              TWBYPIC  24 ,-16 , 1 , 0 
+              TWBYPIC  2 , 0 , 1 , 0 
+              TWBYPIC  0 , 6 , 1 , 0 
+              TWBYPIC  4 , 0 , 1 , 0 
+              TWBYPIC  2 ,-6 , 1 , 0 
+              TWBYPIC  4 , 0 , 1 , 0 
+              TWBYPIC  12 ,-4 , 1 , 0 
+              TWBYPIC -12 ,-4 , 1 , 0 
+              TWBYPIC -4 , 0 , 1 , 0 
+              TWBYPIC -7 ,-6 , 1 , 0 
+              TWBYPIC  1 , 0 , 1 , 0 
+              TWBYPIC  0 , 6 , 1 , 0 
+              TWBYPIC -2 , 0 , 1 , 0 
+              TWBYPIC -24 ,-16 , 1 , 0 
+              TWBYPIC -16 , 0 , 1 , 128 
+              TWBYPIC  0 , 10 , 1 , 0 
+              TWBYPIC -4 , 2 , 1 , 0 
+              TWBYPIC  0 , 16 , 1 , 0 
+              TWBYPIC  4 , 2 , 1 , 0 
+              TWBYPIC  0 , 10 , 1 , 0 
+              TWBYPIC  16 , 0 , 1 , 0 
+		TWBYPIC	12,-20,0,0
+              TWBYPIC -32 ,-8 , 0 , 128 
+              TWBYPIC -20 , 8 , 1 , 0 
+              TWBYPIC  20 , 8 , 1 , 0 
+              TWBYPIC  32 ,-8 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA1:
+              TWBYPIC -14 , 19 , 0 , 0 
+              TWBYPIC  26 ,-14 , 1 , 0 
+              TWBYPIC  2 , 0 , 1 , 0 
+              TWBYPIC -1 , 6 , 1 , 0 
+              TWBYPIC  4 , 1 , 1 , 0 
+              TWBYPIC  3 ,-6 , 1 , 0 
+              TWBYPIC  3 , 0 , 1 , 0 
+              TWBYPIC  13 ,-2 , 1 , 0 
+              TWBYPIC -12 ,-6 , 1 , 0 
+              TWBYPIC -4 , 0 , 1 , 0 
+              TWBYPIC -6 ,-7 , 1 , 0 
+              TWBYPIC  1 , 0 , 1 , 0 
+              TWBYPIC -1 , 6 , 1 , 0 
+              TWBYPIC -2 , 0 , 1 , 0 
+              TWBYPIC -22 ,-18 , 1 , 0 
+              TWBYPIC -16 ,-2 , 1 , 128 
+              TWBYPIC -1 , 10 , 1 , 0 
+              TWBYPIC -4 , 2 , 1 , 0 
+              TWBYPIC -2 , 16 , 1 , 0 
+              TWBYPIC  4 , 2 , 1 , 0 
+              TWBYPIC -1 , 10 , 1 , 0 
+              TWBYPIC  16 , 2 , 1 , 0 
+		TWBYPIC 14,-19,0,0
+              TWBYPIC -31 ,-11 , 0 , 128 
+              TWBYPIC -21 , 6 , 1 , 0 
+              TWBYPIC  19 , 10 , 1 , 0 
+              TWBYPIC  33 ,-5 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA2:
+              TWBYPIC -16 , 17 , 0 , 0 
+              TWBYPIC  27 ,-11 , 1 , 0 
+              TWBYPIC  2 , 1 , 1 , 0 
+              TWBYPIC -1 , 6 , 1 , 0 
+              TWBYPIC  4 , 0 , 1 , 0 
+              TWBYPIC  3 ,-5 , 1 , 0 
+              TWBYPIC  4 , 1 , 1 , 0 
+              TWBYPIC  12 ,-2 , 1 , 0 
+              TWBYPIC -11 ,-6 , 1 , 0 
+              TWBYPIC -4 ,-1 , 1 , 0 
+              TWBYPIC -5 ,-7 , 1 , 0 
+              TWBYPIC  1 , 0 , 1 , 0 
+              TWBYPIC -1 , 6 , 1 , 0 
+              TWBYPIC -2 ,-1 , 1 , 0 
+              TWBYPIC -21 ,-20 , 1 , 0 
+              TWBYPIC -16 ,-3 , 1 , 128 
+              TWBYPIC -2 , 10 , 1 , 0 
+              TWBYPIC -4 , 1 , 1 , 0 
+              TWBYPIC -3 , 16 , 1 , 0 
+              TWBYPIC  4 , 2 , 1 , 0 
+              TWBYPIC -2 , 10 , 1 , 0 
+              TWBYPIC  15 , 3 , 1 , 0 
+		TWBYPIC 16,-17,0,0
+              TWBYPIC -30 ,-14 , 0 , 128 
+              TWBYPIC -21 , 4 , 1 , 0 
+              TWBYPIC  18 , 12 , 1 , 0 
+              TWBYPIC  33 ,-2 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA3:
+              TWBYPIC -17 , 16 , 0 , 0 
+              TWBYPIC  27 ,-9 , 1 , 0 
+              TWBYPIC  2 , 1 , 1 , 0 
+              TWBYPIC -2 , 6 , 1 , 0 
+              TWBYPIC  4 , 1 , 1 , 0 
+              TWBYPIC  4 ,-5 , 1 , 0 
+              TWBYPIC  4 , 1 , 1 , 0 
+              TWBYPIC  12 ,-1 , 1 , 0 
+              TWBYPIC -10 ,-7 , 1 , 0 
+              TWBYPIC -4 ,-1 , 1 , 0 
+              TWBYPIC -5 ,-8 , 1 , 0 
+              TWBYPIC  1 , 0 , 1 , 0 
+              TWBYPIC -1 , 6 , 1 , 0 
+              TWBYPIC -2 , 0 , 1 , 0 
+              TWBYPIC -19 ,-23 , 1 , 0 
+              TWBYPIC -15 ,-4 , 1 , 128 
+              TWBYPIC -3 , 9 , 1 , 0 
+              TWBYPIC -4 , 1 , 1 , 0 
+              TWBYPIC -5 , 15 , 1 , 0 
+              TWBYPIC  3 , 3 , 1 , 0 
+              TWBYPIC -3 , 10 , 1 , 0 
+              TWBYPIC  16 , 5 , 1 , 0 
+		TWBYPIC 17,-16,0,0
+              TWBYPIC -28 ,-17 , 0 , 128 
+              TWBYPIC -22 , 2 , 1 , 0 
+              TWBYPIC  17 , 13 , 1 , 0 
+              TWBYPIC  33 , 2 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA4:
+              TWBYPIC -19 , 14 , 0 , 0 
+              TWBYPIC  29 ,-6 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -2 , 6 , 1 , 0 
+              TWBYPIC  4 , 1 , 1 , 0 
+              TWBYPIC  4 ,-5 , 1 , 0 
+              TWBYPIC  4 , 2 , 1 , 0 
+              TWBYPIC  12 , 1 , 1 , 0 
+              TWBYPIC -9 ,-9 , 1 , 0 
+              TWBYPIC -4 ,-1 , 1 , 0 
+              TWBYPIC -4 ,-8 , 1 , 0 
+              TWBYPIC  1 , 0 , 1 , 0 
+              TWBYPIC -3 , 6 , 1 , 0 
+              TWBYPIC -1 ,-1 , 1 , 0 
+              TWBYPIC -16 ,-24 , 1 , 0 
+              TWBYPIC -15 ,-6 , 1 , 128 
+              TWBYPIC -4 , 9 , 1 , 0 
+              TWBYPIC -5 , 0 , 1 , 0 
+              TWBYPIC -6 , 15 , 1 , 0 
+              TWBYPIC  3 , 4 , 1 , 0 
+              TWBYPIC -4 , 9 , 1 , 0 
+              TWBYPIC  15 , 6 , 1 , 0 
+		TWBYPIC 19,-14,0,0
+              TWBYPIC -27 ,-20 , 0 , 128 
+              TWBYPIC -21 , 0 , 1 , 0 
+              TWBYPIC  15 , 15 , 1 , 0 
+              TWBYPIC  33 , 5 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA5:
+              TWBYPIC -20 , 12 , 0 , 0 
+              TWBYPIC  29 ,-3 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -2 , 5 , 1 , 0 
+              TWBYPIC  3 , 2 , 1 , 0 
+              TWBYPIC  5 ,-4 , 1 , 0 
+              TWBYPIC  3 , 2 , 1 , 0 
+              TWBYPIC  13 , 2 , 1 , 0 
+              TWBYPIC -9 ,-9 , 1 , 0 
+              TWBYPIC -3 ,-2 , 1 , 0 
+              TWBYPIC -4 ,-9 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -3 , 5 , 1 , 0 
+              TWBYPIC -2 ,-1 , 1 , 0 
+              TWBYPIC -13 ,-25 , 1 , 0 
+              TWBYPIC -14 ,-8 , 1 , 128 
+              TWBYPIC -5 , 9 , 1 , 0 
+              TWBYPIC -4 , 0 , 1 , 0 
+              TWBYPIC -8 , 14 , 1 , 0 
+              TWBYPIC  3 , 4 , 1 , 0 
+              TWBYPIC -5 , 8 , 1 , 0 
+              TWBYPIC  14 , 8 , 1 , 0 
+		TWBYPIC 20,-12,0,0
+              TWBYPIC -24 ,-22 , 0 , 128 
+              TWBYPIC -22 ,-3 , 1 , 0 
+              TWBYPIC  14 , 17 , 1 , 0 
+              TWBYPIC  32 , 8 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA6:
+              TWBYPIC -21 , 10 , 0 , 0 
+              TWBYPIC  29 , 0 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -3 , 5 , 1 , 0 
+              TWBYPIC  3 , 2 , 1 , 0 
+              TWBYPIC  5 ,-4 , 1 , 0 
+              TWBYPIC  4 , 3 , 1 , 0 
+              TWBYPIC  12 , 3 , 1 , 0 
+              TWBYPIC -8 ,-10 , 1 , 0 
+              TWBYPIC -3 ,-2 , 1 , 0 
+              TWBYPIC -3 ,-9 , 1 , 0 
+              TWBYPIC  1 , 0 , 1 , 0 
+              TWBYPIC -3 , 5 , 1 , 0 
+              TWBYPIC -2 ,-1 , 1 , 0 
+              TWBYPIC -11 ,-26 , 1 , 0 
+              TWBYPIC -13 ,-9 , 1 , 128 
+              TWBYPIC -6 , 8 , 1 , 0 
+              TWBYPIC -4 , 0 , 1 , 0 
+              TWBYPIC -9 , 13 , 1 , 0 
+              TWBYPIC  2 , 4 , 1 , 0 
+              TWBYPIC -5 , 8 , 1 , 0 
+              TWBYPIC  13 , 9 , 1 , 0 
+		TWBYPIC 20,-12,0,0
+              TWBYPIC -22 ,-24 , 0 , 128 
+              TWBYPIC -21 ,-5 , 1 , 0 
+              TWBYPIC  12 , 18 , 1 , 0 
+              TWBYPIC  31 , 11 , 0 , 0 
+              CRPAGE .LENGTH
+SHPA7:
+              TWBYPIC -22 , 8 , 0 , 0 
+              TWBYPIC  29 , 3 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -4 , 5 , 1 , 0 
+              TWBYPIC  4 , 2 , 1 , 0 
+              TWBYPIC  5 ,-3 , 1 , 0 
+              TWBYPIC  3 , 2 , 1 , 0 
+              TWBYPIC  12 , 5 , 1 , 0 
+              TWBYPIC -7 ,-11 , 1 , 0 
+              TWBYPIC -3 ,-2 , 1 , 0 
+              TWBYPIC -2 ,-9 , 1 , 0 
+              TWBYPIC  1 , 0 , 1 , 0 
+              TWBYPIC -4 , 5 , 1 , 0 
+              TWBYPIC -1 ,-1 , 1 , 0 
+              TWBYPIC -9 ,-28 , 1 , 0 
+              TWBYPIC -12 ,-10 , 1 , 128 
+              TWBYPIC -6 , 8 , 1 , 0 
+              TWBYPIC -5 ,-1 , 1 , 0 
+              TWBYPIC -10 , 12 , 1 , 0 
+              TWBYPIC  2 , 4 , 1 , 0 
+              TWBYPIC -6 , 8 , 1 , 0 
+              TWBYPIC  12 , 10 , 1 , 0 
+		TWBYPIC 22,-8,0,0
+              TWBYPIC -20 ,-26 , 0 , 128 
+              TWBYPIC -20 ,-7 , 1 , 0 
+              TWBYPIC  10 , 19 , 1 , 0 
+              TWBYPIC  30 , 14 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA8:
+              TWBYPIC -23 , 6 , 0 , 0 
+              TWBYPIC  29 , 5 , 1 , 0 
+              TWBYPIC  1 , 2 , 1 , 0 
+              TWBYPIC -4 , 4 , 1 , 0 
+              TWBYPIC  3 , 3 , 1 , 0 
+              TWBYPIC  5 ,-3 , 1 , 0 
+              TWBYPIC  3 , 3 , 1 , 0 
+              TWBYPIC  11 , 5 , 1 , 0 
+              TWBYPIC -5 ,-11 , 1 , 0 
+              TWBYPIC -3 ,-3 , 1 , 0 
+              TWBYPIC -1 ,-9 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -4 , 4 , 1 , 0 
+              TWBYPIC -2 ,-1 , 1 , 0 
+              TWBYPIC -5 ,-29 , 1 , 0 
+              TWBYPIC -12 ,-11 , 1 , 128 
+              TWBYPIC -7 , 7 , 1 , 0 
+              TWBYPIC -4 ,-1 , 1 , 0 
+              TWBYPIC -11 , 11 , 1 , 0 
+              TWBYPIC  1 , 4 , 1 , 0 
+              TWBYPIC -7 , 7 , 1 , 0 
+              TWBYPIC  11 , 12 , 1 , 0 
+              TWBYPIC  23 ,-6 , 0 , 0 
+              TWBYPIC -17 ,-28 , 0 , 128 
+              TWBYPIC -20 ,-9 , 1 , 0 
+              TWBYPIC  9 , 20 , 1 , 0 
+              TWBYPIC  28 , 17 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA9:
+              TWBYPIC -23 , 3 , 0 , 0 
+              TWBYPIC  28 , 9 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -5 , 4 , 1 , 0 
+              TWBYPIC  3 , 3 , 1 , 0 
+              TWBYPIC  6 ,-2 , 1 , 0 
+              TWBYPIC  2 , 3 , 1 , 0 
+              TWBYPIC  11 , 7 , 1 , 0 
+              TWBYPIC -5 ,-12 , 1 , 0 
+              TWBYPIC -2 ,-3 , 1 , 0 
+              TWBYPIC  0 ,-9 , 1 , 0 
+              TWBYPIC  1 , 0 , 1 , 0 
+              TWBYPIC -5 , 4 , 1 , 0 
+              TWBYPIC -1 ,-1 , 1 , 0 
+              TWBYPIC -3 ,-29 , 1 , 0 
+              TWBYPIC -10 ,-12 , 1 , 128 
+              TWBYPIC -8 , 6 , 1 , 0 
+              TWBYPIC -4 ,-2 , 1 , 0 
+              TWBYPIC -12 , 10 , 1 , 0 
+              TWBYPIC  1 , 5 , 1 , 0 
+              TWBYPIC -8 , 6 , 1 , 0 
+              TWBYPIC  10 , 12 , 1 , 0 
+	TWBYPIC 23,-3,0,0
+              TWBYPIC -14 ,-30 , 0 , 128 
+              TWBYPIC -19 ,-10 , 1 , 0 
+              TWBYPIC  7 , 20 , 1 , 0 
+              TWBYPIC  26 , 20 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA10:
+              TWBYPIC -23 , 1 , 0 , 0 
+              TWBYPIC  26 , 11 , 1 , 0 
+              TWBYPIC  1 , 2 , 1 , 0 
+              TWBYPIC -5 , 3 , 1 , 0 
+              TWBYPIC  3 , 4 , 1 , 0 
+              TWBYPIC  6 ,-2 , 1 , 0 
+              TWBYPIC  2 , 3 , 1 , 0 
+              TWBYPIC  10 , 8 , 1 , 0 
+              TWBYPIC -3 ,-12 , 1 , 0 
+              TWBYPIC -3 ,-4 , 1 , 0 
+              TWBYPIC  2 ,-9 , 1 , 0 
+              TWBYPIC  0 , 1 , 1 , 0 
+              TWBYPIC -5 , 3 , 1 , 0 
+              TWBYPIC -1 ,-1 , 1 , 0 
+              TWBYPIC  0 ,-29 , 1 , 0 
+              TWBYPIC -9 ,-13 , 1 , 128 
+              TWBYPIC -8 , 5 , 1 , 0 
+              TWBYPIC -4 ,-2 , 1 , 0 
+              TWBYPIC -13 , 9 , 1 , 0 
+              TWBYPIC  0 , 4 , 1 , 0 
+              TWBYPIC -8 , 6 , 1 , 0 
+              TWBYPIC  9 , 13 , 1 , 0 
+		TWBYPIC 23,-1,0,0
+              TWBYPIC -11 ,-31 , 0 , 128 
+              TWBYPIC -18 ,-12 , 1 , 0 
+              TWBYPIC  5 , 21 , 1 , 0 
+              TWBYPIC  24 , 22 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA11:
+              TWBYPIC -23 ,-1 , 0 , 0 
+              TWBYPIC  25 , 13 , 1 , 0 
+              TWBYPIC  1 , 2 , 1 , 0 
+              TWBYPIC -5 , 3 , 1 , 0 
+              TWBYPIC  2 , 4 , 1 , 0 
+              TWBYPIC  6 ,-1 , 1 , 0 
+              TWBYPIC  2 , 3 , 1 , 0 
+              TWBYPIC  9 , 9 , 1 , 0 
+              TWBYPIC -2 ,-13 , 1 , 0 
+              TWBYPIC -2 ,-3 , 1 , 0 
+              TWBYPIC  2 ,-9 , 1 , 0 
+              TWBYPIC  0 , 1 , 1 , 0 
+              TWBYPIC -5 , 2 , 1 , 0 
+              TWBYPIC -1 ,-1 , 1 , 0 
+              TWBYPIC  3 ,-29 , 1 , 0 
+              TWBYPIC -8 ,-14 , 1 , 128 
+              TWBYPIC -8 , 5 , 1 , 0 
+              TWBYPIC -4 ,-3 , 1 , 0 
+              TWBYPIC -14 , 8 , 1 , 0 
+              TWBYPIC  0 , 4 , 1 , 0 
+              TWBYPIC -9 , 5 , 1 , 0 
+              TWBYPIC  8 , 14 , 1 , 0 
+		TWBYPIC 23,1,0,0
+              TWBYPIC -8 ,-32 , 0 , 128 
+              TWBYPIC -17 ,-14 , 1 , 0 
+              TWBYPIC  3 , 22 , 1 , 0 
+              TWBYPIC  22 , 24 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA12:
+              TWBYPIC -23 ,-3 , 0 , 0 
+              TWBYPIC  24 , 16 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -6 , 3 , 1 , 0 
+              TWBYPIC  2 , 3 , 1 , 0 
+              TWBYPIC  6 , 0 , 1 , 0 
+              TWBYPIC  1 , 4 , 1 , 0 
+              TWBYPIC  9 , 9 , 1 , 0 
+              TWBYPIC -1 ,-12 , 1 , 0 
+              TWBYPIC -2 ,-4 , 1 , 0 
+              TWBYPIC  3 ,-9 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -6 , 2 , 1 , 0 
+              TWBYPIC -1 ,-1 , 1 , 0 
+              TWBYPIC  6 ,-29 , 1 , 0 
+              TWBYPIC -6 ,-15 , 1 , 128 
+              TWBYPIC -9 , 4 , 1 , 0 
+              TWBYPIC -4 ,-3 , 1 , 0 
+              TWBYPIC -15 , 6 , 1 , 0 
+              TWBYPIC  0 , 5 , 1 , 0 
+              TWBYPIC -9 , 4 , 1 , 0 
+              TWBYPIC  6 , 15 , 1 , 0 
+		TWBYPIC 23,3,0,0
+              TWBYPIC -5 ,-33 , 0 , 128 
+              TWBYPIC -15 ,-15 , 1 , 0 
+              TWBYPIC  0 , 21 , 1 , 0 
+              TWBYPIC  20 , 27 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA13:
+              TWBYPIC -23 ,-6 , 0 , 0 
+              TWBYPIC  23 , 19 , 1 , 0 
+              TWBYPIC  0 , 2 , 1 , 0 
+              TWBYPIC -6 , 1 , 1 , 0 
+              TWBYPIC  2 , 4 , 1 , 0 
+              TWBYPIC  6 , 0 , 1 , 0 
+              TWBYPIC  1 , 4 , 1 , 0 
+              TWBYPIC  7 , 10 , 1 , 0 
+              TWBYPIC  1 ,-12 , 1 , 0 
+              TWBYPIC -1 ,-4 , 1 , 0 
+              TWBYPIC  3 ,-8 , 1 , 0 
+              TWBYPIC  1 , 0 , 1 , 0 
+              TWBYPIC -6 , 2 , 1 , 0 
+              TWBYPIC -1 ,-2 , 1 , 0 
+              TWBYPIC  9 ,-27 , 1 , 0 
+              TWBYPIC -5 ,-16 , 1 , 128 
+              TWBYPIC -10 , 3 , 1 , 0 
+              TWBYPIC -3 ,-3 , 1 , 0 
+              TWBYPIC -15 , 5 , 1 , 0 
+              TWBYPIC -1 , 4 , 1 , 0 
+              TWBYPIC -9 , 3 , 1 , 0 
+              TWBYPIC  4 , 15 , 1 , 0 
+		TWBYPIC 23,6,0,0
+              TWBYPIC -2 ,-33 , 0 , 128 
+              TWBYPIC -13 ,-17 , 1 , 0 
+              TWBYPIC -2 , 22 , 1 , 0 
+              TWBYPIC  17 , 28 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA14:
+              TWBYPIC -22 ,-8 , 0 , 0 
+              TWBYPIC  20 , 21 , 1 , 0 
+              TWBYPIC  1 , 2 , 1 , 0 
+              TWBYPIC -6 , 1 , 1 , 0 
+              TWBYPIC  1 , 4 , 1 , 0 
+              TWBYPIC  6 , 0 , 1 , 0 
+              TWBYPIC  1 , 4 , 1 , 0 
+              TWBYPIC  6 , 11 , 1 , 0 
+              TWBYPIC  2 ,-12 , 1 , 0 
+              TWBYPIC -1 ,-4 , 1 , 0 
+              TWBYPIC  4 ,-8 , 1 , 0 
+              TWBYPIC  1 , 1 , 1 , 0 
+              TWBYPIC -6 , 1 , 1 , 0 
+              TWBYPIC -1 ,-2 , 1 , 0 
+              TWBYPIC  11 ,-27 , 1 , 0 
+              TWBYPIC -3 ,-15 , 1 , 128 
+              TWBYPIC -10 , 2 , 1 , 0 
+              TWBYPIC -2 ,-4 , 1 , 0 
+              TWBYPIC -16 , 3 , 1 , 0 
+              TWBYPIC -1 , 4 , 1 , 0 
+              TWBYPIC -10 , 2 , 1 , 0 
+              TWBYPIC  3 , 16 , 1 , 0 
+		TWBYPIC 22,8,0,0
+              TWBYPIC  2 ,-33 , 0 , 128 
+              TWBYPIC -12 ,-18 , 1 , 0 
+              TWBYPIC -4 , 21 , 1 , 0 
+              TWBYPIC  14 , 30 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA15:
+              TWBYPIC -21 ,-10 , 0 , 0 
+              TWBYPIC  18 , 22 , 1 , 0 
+              TWBYPIC  0 , 2 , 1 , 0 
+              TWBYPIC -6 , 1 , 1 , 0 
+              TWBYPIC  1 , 4 , 1 , 0 
+              TWBYPIC  6 , 1 , 1 , 0 
+              TWBYPIC  0 , 4 , 1 , 0 
+              TWBYPIC  6 , 12 , 1 , 0 
+              TWBYPIC  2 ,-13 , 1 , 0 
+              TWBYPIC  0 ,-3 , 1 , 0 
+              TWBYPIC  5 ,-8 , 1 , 0 
+              TWBYPIC  0 , 1 , 1 , 0 
+              TWBYPIC -6 , 1 , 1 , 0 
+              TWBYPIC  0 ,-2 , 1 , 0 
+              TWBYPIC  14 ,-26 , 1 , 0 
+              TWBYPIC -2 ,-16 , 1 , 128 
+              TWBYPIC -10 , 1 , 1 , 0 
+              TWBYPIC -2 ,-4 , 1 , 0 
+              TWBYPIC -16 , 2 , 1 , 0 
+              TWBYPIC -2 , 4 , 1 , 0 
+              TWBYPIC -10 , 1 , 1 , 0 
+              TWBYPIC  2 , 16 , 1 , 0 
+		TWBYPIC 21,10,0,0
+              TWBYPIC  5 ,-33 , 0 , 128 
+              TWBYPIC -10 ,-19 , 1 , 0 
+              TWBYPIC -6 , 21 , 1 , 0 
+              TWBYPIC  11 , 31 , 0 , 0 
+              PICEND
+              CRPAGE .LENGTH
+SHPA16:
+              TWBYPIC -20 ,-12 , 0 , 0 
+              TWBYPIC  16 , 24 , 1 , 0 
+              TWBYPIC  0 , 2 , 1 , 0 
+              TWBYPIC -6 , 0 , 1 , 0 
+              TWBYPIC  0 , 4 , 1 , 0 
+              TWBYPIC  6 , 2 , 1 , 0 
+              TWBYPIC  0 , 4 , 1 , 0 
+              TWBYPIC  4 , 12 , 1 , 0 
+              TWBYPIC  4 ,-12 , 1 , 0 
+              TWBYPIC  0 ,-4 , 1 , 0 
+              TWBYPIC  6 ,-7 , 1 , 0 
+              TWBYPIC  0 , 1 , 1 , 0 
+              TWBYPIC -6 , 0 , 1 , 0 
+              TWBYPIC  0 ,-2 , 1 , 0 
+              TWBYPIC  16 ,-24 , 1 , 0 
+              TWBYPIC  0 ,-16 , 1 , 128 
+              TWBYPIC -10 , 0 , 1 , 0 
+              TWBYPIC -2 ,-4 , 1 , 0 
+              TWBYPIC -16 , 0 , 1 , 0 
+              TWBYPIC -2 , 4 , 1 , 0 
+              TWBYPIC -10 , 0 , 1 , 0 
+              TWBYPIC  0 , 16 , 1 , 0 
+              TWBYPIC  20 , 12 , 0 , 0 
+              TWBYPIC  8 ,-32 , 0 , 128 
+              TWBYPIC -8 ,-20 , 1 , 0 
+              TWBYPIC -8 , 20 , 1 , 0 
+              TWBYPIC  8 , 32 , 0 , 0 
+              PICEND
+	.LENGTH=50.
+CRPAGE .LENGTH
+SHPB0:
+              TWBYPIC -24 , 20 , 0 , 0 
+              TWBYPIC  20 , 0 , 1 , 0 
+              TWBYPIC  4 ,-8 , 1 , 0 
+              TWBYPIC -8 , 1 , 1 , 0 
+              TWBYPIC  4 ,-7 , 1 , 0 
+              TWBYPIC  16 , 0 , 1 , 0 
+              TWBYPIC  24 ,-4 , 1 , 0 
+              TWBYPIC  0 ,-4 , 1 , 0 
+              TWBYPIC -24 ,-4 , 1 , 0 
+              TWBYPIC -16 , 0 , 1 , 0 
+              TWBYPIC -4 ,-6 , 1 , 0 
+              TWBYPIC  8 , 0 , 1 , 0 
+              TWBYPIC -4 ,-8 , 1 , 0 
+              TWBYPIC -20 , 0 , 1 , 128 
+              TWBYPIC -8 , 8 , 1 , 0 
+              TWBYPIC  8 , 0 , 1 , 0 
+              TWBYPIC  4 , 12 , 1 , 0 
+              TWBYPIC -4 , 12 , 1 , 0 
+              TWBYPIC -8 , 0 , 1 , 0 
+              TWBYPIC  8 , 8 , 1 , 0 
+              TWBYPIC  24 ,-20 , 0 , 0 
+              TWBYPIC -24 , 12 , 0 , 128 
+              TWBYPIC -16 ,-12 , 1 , 0 
+              TWBYPIC  16 ,-12 , 1 , 0 
+              TWBYPIC  24 , 12 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB1:
+              TWBYPIC -26 , 18 , 0 , 0 
+              TWBYPIC  20 , 2 , 1 , 0 
+              TWBYPIC  5 ,-8 , 1 , 0 
+              TWBYPIC -8 , 0 , 1 , 0 
+              TWBYPIC  4 ,-6 , 1 , 0 
+              TWBYPIC  16 , 1 , 1 , 0 
+              TWBYPIC  25 ,-1 , 1 , 0 
+              TWBYPIC  0 ,-4 , 1 , 0 
+              TWBYPIC -23 ,-7 , 1 , 0 
+              TWBYPIC -16 ,-1 , 1 , 0 
+              TWBYPIC -4 ,-7 , 1 , 0 
+              TWBYPIC  8 , 1 , 1 , 0 
+              TWBYPIC -3 ,-8 , 1 , 0 
+              TWBYPIC -20 ,-2 , 1 , 128 
+              TWBYPIC -9 , 7 , 1 , 0 
+              TWBYPIC  8 , 1 , 1 , 0 
+              TWBYPIC  3 , 12 , 1 , 0 
+              TWBYPIC -5 , 12 , 1 , 0 
+              TWBYPIC -8 ,-1 , 1 , 0 
+              TWBYPIC  7 , 9 , 1 , 0 
+              TWBYPIC  26 ,-18 , 0 , 0 
+              TWBYPIC -25 , 10 , 0 , 128 
+              TWBYPIC -15 ,-14 , 1 , 0 
+              TWBYPIC  17 ,-10 , 1 , 0 
+              TWBYPIC  23 , 14 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB2:
+              TWBYPIC -27 , 15 , 0 , 0 
+              TWBYPIC  19 , 4 , 1 , 0 
+              TWBYPIC  6 ,-7 , 1 , 0 
+              TWBYPIC -8 ,-1 , 1 , 0 
+              TWBYPIC  5 ,-6 , 1 , 0 
+              TWBYPIC  16 , 3 , 1 , 0 
+              TWBYPIC  24 , 1 , 1 , 0 
+              TWBYPIC  1 ,-4 , 1 , 0 
+              TWBYPIC -23 ,-9 , 1 , 0 
+              TWBYPIC -16 ,-3 , 1 , 0 
+              TWBYPIC -3 ,-6 , 1 , 0 
+              TWBYPIC  8 , 1 , 1 , 0 
+              TWBYPIC -2 ,-8 , 1 , 0 
+              TWBYPIC -20 ,-4 , 1 , 128 
+              TWBYPIC -9 , 6 , 1 , 0 
+              TWBYPIC  8 , 2 , 1 , 0 
+              TWBYPIC  1 , 12 , 1 , 0 
+              TWBYPIC -6 , 11 , 1 , 0 
+              TWBYPIC -8 ,-1 , 1 , 0 
+              TWBYPIC  7 , 9 , 1 , 0 
+              TWBYPIC  27 ,-15 , 0 , 0 
+              TWBYPIC -26 , 7 , 0 , 128 
+              TWBYPIC -13 ,-15 , 1 , 0 
+              TWBYPIC  18 ,-8 , 1 , 0 
+              TWBYPIC  21 , 16 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB3:
+              TWBYPIC -29 , 12 , 0 , 0 
+              TWBYPIC  19 , 6 , 1 , 0 
+              TWBYPIC  7 ,-7 , 1 , 0 
+              TWBYPIC -8 ,-1 , 1 , 0 
+              TWBYPIC  5 ,-5 , 1 , 0 
+              TWBYPIC  16 , 4 , 1 , 0 
+              TWBYPIC  24 , 3 , 1 , 0 
+              TWBYPIC  1 ,-3 , 1 , 0 
+              TWBYPIC -22 ,-11 , 1 , 0 
+              TWBYPIC -15 ,-5 , 1 , 0 
+              TWBYPIC -2 ,-7 , 1 , 0 
+              TWBYPIC  7 , 3 , 1 , 0 
+              TWBYPIC -1 ,-9 , 1 , 0 
+              TWBYPIC -19 ,-6 , 1 , 128 
+              TWBYPIC -10 , 5 , 1 , 0 
+              TWBYPIC  8 , 3 , 1 , 0 
+              TWBYPIC  0 , 12 , 1 , 0 
+              TWBYPIC -7 , 11 , 1 , 0 
+              TWBYPIC -8 ,-3 , 1 , 0 
+              TWBYPIC  5 , 10 , 1 , 0 
+              TWBYPIC  29 ,-12 , 0 , 0 
+              TWBYPIC -26 , 5 , 0 , 128 
+              TWBYPIC -12 ,-17 , 1 , 0 
+              TWBYPIC  19 ,-6 , 1 , 0 
+              TWBYPIC  19 , 18 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB4:
+              TWBYPIC -30 , 9 , 0 , 0 
+              TWBYPIC  19 , 8 , 1 , 0 
+              TWBYPIC  6 ,-6 , 1 , 0 
+              TWBYPIC -7 ,-3 , 1 , 0 
+              TWBYPIC  6 ,-4 , 1 , 0 
+              TWBYPIC  15 , 6 , 1 , 0 
+              TWBYPIC  23 , 6 , 1 , 0 
+              TWBYPIC  2 ,-4 , 1 , 0 
+              TWBYPIC -21 ,-13 , 1 , 0 
+              TWBYPIC -14 ,-6 , 1 , 0 
+              TWBYPIC -2 ,-7 , 1 , 0 
+              TWBYPIC  8 , 3 , 1 , 0 
+              TWBYPIC -1 ,-9 , 1 , 0 
+              TWBYPIC -19 ,-8 , 1 , 128 
+              TWBYPIC -10 , 5 , 1 , 0 
+              TWBYPIC  7 , 3 , 1 , 0 
+              TWBYPIC  0 , 12 , 1 , 0 
+              TWBYPIC -9 , 10 , 1 , 0 
+              TWBYPIC -7 ,-3 , 1 , 0 
+              TWBYPIC  4 , 10 , 1 , 0 
+              TWBYPIC  30 ,-9 , 0 , 0 
+              TWBYPIC -27 , 2 , 0 , 128 
+              TWBYPIC -10 ,-17 , 1 , 0 
+              TWBYPIC  19 ,-5 , 1 , 0 
+              TWBYPIC  18 , 20 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB5:
+              TWBYPIC -31 , 6 , 0 , 0 
+              TWBYPIC  18 , 10 , 1 , 0 
+              TWBYPIC  7 ,-5 , 1 , 0 
+              TWBYPIC -7 ,-4 , 1 , 0 
+              TWBYPIC  7 ,-4 , 1 , 0 
+              TWBYPIC  14 , 8 , 1 , 0 
+              TWBYPIC  23 , 8 , 1 , 0 
+              TWBYPIC  2 ,-4 , 1 , 0 
+              TWBYPIC -20 ,-15 , 1 , 0 
+              TWBYPIC -14 ,-7 , 1 , 0 
+              TWBYPIC  0 ,-7 , 1 , 0 
+              TWBYPIC  7 , 3 , 1 , 0 
+              TWBYPIC  0 ,-9 , 1 , 0 
+              TWBYPIC -18 ,-9 , 1 , 128 
+              TWBYPIC -11 , 3 , 1 , 0 
+              TWBYPIC  7 , 4 , 1 , 0 
+              TWBYPIC -2 , 13 , 1 , 0 
+              TWBYPIC -9 , 8 , 1 , 0 
+              TWBYPIC -7 ,-4 , 1 , 0 
+              TWBYPIC  3 , 11 , 1 , 0 
+              TWBYPIC  31 ,-6 , 0 , 0 
+              TWBYPIC -27 ,-1 , 0 , 128 
+              TWBYPIC -8 ,-18 , 1 , 0 
+              TWBYPIC  19 ,-3 , 1 , 0 
+              TWBYPIC  16 , 22 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB6:
+              TWBYPIC -31 , 3 , 0 , 0 
+              TWBYPIC  17 , 11 , 1 , 0 
+              TWBYPIC  7 ,-4 , 1 , 0 
+              TWBYPIC -7 ,-4 , 1 , 0 
+              TWBYPIC  7 ,-3 , 1 , 0 
+              TWBYPIC  14 , 9 , 1 , 0 
+              TWBYPIC  22 , 10 , 1 , 0 
+              TWBYPIC  2 ,-4 , 1 , 0 
+              TWBYPIC -18 ,-16 , 1 , 0 
+              TWBYPIC -13 ,-9 , 1 , 0 
+              TWBYPIC  0 ,-7 , 1 , 0 
+              TWBYPIC  7 , 4 , 1 , 0 
+              TWBYPIC  1 ,-9 , 1 , 0 
+              TWBYPIC -17 ,-11 , 1 , 128 
+              TWBYPIC -11 , 2 , 1 , 0 
+              TWBYPIC  7 , 5 , 1 , 0 
+              TWBYPIC -4 , 12 , 1 , 0 
+              TWBYPIC -10 , 8 , 1 , 0 
+              TWBYPIC -6 ,-5 , 1 , 0 
+              TWBYPIC  2 , 11 , 1 , 0 
+              TWBYPIC  31 ,-3 , 0 , 0 
+              TWBYPIC -27 ,-3 , 0 , 128 
+              TWBYPIC -6 ,-19 , 1 , 0 
+              TWBYPIC  20 ,-1 , 1 , 0 
+              TWBYPIC  13 , 23 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB7:
+              TWBYPIC -31 , 0 , 0 , 0 
+              TWBYPIC  15 , 13 , 1 , 0 
+              TWBYPIC  8 ,-4 , 1 , 0 
+              TWBYPIC -6 ,-4 , 1 , 0 
+              TWBYPIC  7 ,-3 , 1 , 0 
+              TWBYPIC  12 , 10 , 1 , 0 
+              TWBYPIC  22 , 12 , 1 , 0 
+              TWBYPIC  2 ,-3 , 1 , 0 
+              TWBYPIC -16 ,-18 , 1 , 0 
+              TWBYPIC -12 ,-10 , 1 , 0 
+              TWBYPIC  0 ,-7 , 1 , 0 
+              TWBYPIC  7 , 5 , 1 , 0 
+              TWBYPIC  2 ,-9 , 1 , 0 
+              TWBYPIC -16 ,-13 , 1 , 128 
+              TWBYPIC -11 , 1 , 1 , 0 
+              TWBYPIC  6 , 5 , 1 , 0 
+              TWBYPIC -4 , 12 , 1 , 0 
+              TWBYPIC -11 , 7 , 1 , 0 
+              TWBYPIC -6 ,-5 , 1 , 0 
+              TWBYPIC  1 , 11 , 1 , 0 
+              TWBYPIC  31 , 0 , 0 , 0 
+              TWBYPIC -26 ,-6 , 0 , 128 
+              TWBYPIC -5 ,-19 , 1 , 0 
+              TWBYPIC  20 , 0 , 1 , 0 
+              TWBYPIC  11 , 25 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB8:
+              TWBYPIC -31 ,-3 , 0 , 0 
+              TWBYPIC  14 , 14 , 1 , 0 
+              TWBYPIC  9 ,-3 , 1 , 0 
+              TWBYPIC -6 ,-5 , 1 , 0 
+              TWBYPIC  7 ,-2 , 1 , 0 
+              TWBYPIC  11 , 12 , 1 , 0 
+              TWBYPIC  20 , 14 , 1 , 0 
+              TWBYPIC  3 ,-3 , 1 , 0 
+              TWBYPIC -14 ,-20 , 1 , 0 
+              TWBYPIC -12 ,-11 , 1 , 0 
+              TWBYPIC  2 ,-7 , 1 , 0 
+              TWBYPIC  5 , 6 , 1 , 0 
+              TWBYPIC  3 ,-9 , 1 , 0 
+              TWBYPIC -14 ,-14 , 1 , 128 
+              TWBYPIC -11 , 0 , 1 , 0 
+              TWBYPIC  6 , 6 , 1 , 0 
+              TWBYPIC -6 , 11 , 1 , 0 
+              TWBYPIC -11 , 6 , 1 , 0 
+              TWBYPIC -6 ,-6 , 1 , 0 
+              TWBYPIC  0 , 11 , 1 , 0 
+              TWBYPIC  31 , 3 , 0 , 0 
+              TWBYPIC -25 ,-8 , 0 , 128 
+              TWBYPIC -3 ,-20 , 1 , 0 
+              TWBYPIC  20 , 3 , 1 , 0 
+              TWBYPIC  8 , 25 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB9:
+              TWBYPIC -31 ,-6 , 0 , 0 
+              TWBYPIC  13 , 16 , 1 , 0 
+              TWBYPIC  9 ,-2 , 1 , 0 
+              TWBYPIC -6 ,-6 , 1 , 0 
+              TWBYPIC  8 ,-1 , 1 , 0 
+              TWBYPIC  10 , 12 , 1 , 0 
+              TWBYPIC  18 , 16 , 1 , 0 
+              TWBYPIC  3 ,-2 , 1 , 0 
+              TWBYPIC -12 ,-22 , 1 , 0 
+              TWBYPIC -10 ,-12 , 1 , 0 
+              TWBYPIC  2 ,-7 , 1 , 0 
+              TWBYPIC  5 , 6 , 1 , 0 
+              TWBYPIC  4 ,-8 , 1 , 0 
+              TWBYPIC -13 ,-15 , 1 , 128 
+              TWBYPIC -11 ,-1 , 1 , 0 
+              TWBYPIC  5 , 6 , 1 , 0 
+              TWBYPIC -7 , 11 , 1 , 0 
+              TWBYPIC -12 , 4 , 1 , 0 
+              TWBYPIC -5 ,-6 , 1 , 0 
+              TWBYPIC -1 , 11 , 1 , 0 
+              TWBYPIC  31 , 6 , 0 , 0 
+              TWBYPIC -25 ,-11 , 0 , 128 
+              TWBYPIC  0 ,-20 , 1 , 0 
+              TWBYPIC  19 , 5 , 1 , 0 
+              TWBYPIC  6 , 26 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB10:
+              TWBYPIC -30 ,-9 , 0 , 0 
+              TWBYPIC  11 , 17 , 1 , 0 
+              TWBYPIC  9 ,-1 , 1 , 0 
+              TWBYPIC -5 ,-7 , 1 , 0 
+              TWBYPIC  8 , 0 , 1 , 0 
+              TWBYPIC  9 , 13 , 1 , 0 
+              TWBYPIC  16 , 18 , 1 , 0 
+              TWBYPIC  4 ,-2 , 1 , 0 
+              TWBYPIC -10 ,-22 , 1 , 0 
+              TWBYPIC -9 ,-14 , 1 , 0 
+              TWBYPIC  3 ,-6 , 1 , 0 
+              TWBYPIC  4 , 6 , 1 , 0 
+              TWBYPIC  4 ,-7 , 1 , 0 
+              TWBYPIC -11 ,-17 , 1 , 128 
+              TWBYPIC -11 ,-2 , 1 , 0 
+              TWBYPIC  5 , 6 , 1 , 0 
+              TWBYPIC -8 , 10 , 1 , 0 
+              TWBYPIC -12 , 4 , 1 , 0 
+              TWBYPIC -5 ,-7 , 1 , 0 
+              TWBYPIC -2 , 11 , 1 , 0 
+              TWBYPIC  30 , 9 , 0 , 0 
+              TWBYPIC -23 ,-13 , 0 , 128 
+              TWBYPIC  1 ,-20 , 1 , 0 
+              TWBYPIC  19 , 6 , 1 , 0 
+              TWBYPIC  3 , 27 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB11:
+              TWBYPIC -29 ,-12 , 0 , 0 
+              TWBYPIC  9 , 18 , 1 , 0 
+              TWBYPIC  9 , 0 , 1 , 0 
+              TWBYPIC -4 ,-7 , 1 , 0 
+              TWBYPIC  8 , 0 , 1 , 0 
+              TWBYPIC  7 , 14 , 1 , 0 
+              TWBYPIC  15 , 20 , 1 , 0 
+              TWBYPIC  4 ,-2 , 1 , 0 
+              TWBYPIC -8 ,-23 , 1 , 0 
+              TWBYPIC -8 ,-14 , 1 , 0 
+              TWBYPIC  4 ,-7 , 1 , 0 
+              TWBYPIC  4 , 7 , 1 , 0 
+              TWBYPIC  5 ,-7 , 1 , 0 
+              TWBYPIC -10 ,-18 , 1 , 128 
+              TWBYPIC -11 ,-3 , 1 , 0 
+              TWBYPIC  4 , 7 , 1 , 0 
+              TWBYPIC -8 , 9 , 1 , 0 
+              TWBYPIC -13 , 2 , 1 , 0 
+              TWBYPIC -4 ,-7 , 1 , 0 
+              TWBYPIC -3 , 11 , 1 , 0 
+              TWBYPIC  29 , 12 , 0 , 0 
+              TWBYPIC -22 ,-16 , 0 , 128 
+              TWBYPIC  3 ,-19 , 1 , 0 
+              TWBYPIC  18 , 8 , 1 , 0 
+              TWBYPIC  1 , 27 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB12:
+              TWBYPIC -28 ,-15 , 0 , 0 
+              TWBYPIC  8 , 19 , 1 , 0 
+              TWBYPIC  9 , 1 , 1 , 0 
+              TWBYPIC -4 ,-8 , 1 , 0 
+              TWBYPIC  8 , 2 , 1 , 0 
+              TWBYPIC  6 , 14 , 1 , 0 
+              TWBYPIC  13 , 21 , 1 , 0 
+              TWBYPIC  4 ,-2 , 1 , 0 
+              TWBYPIC -6 ,-23 , 1 , 0 
+              TWBYPIC -6 ,-15 , 1 , 0 
+              TWBYPIC  4 ,-6 , 1 , 0 
+              TWBYPIC  3 , 7 , 1 , 0 
+              TWBYPIC  6 ,-6 , 1 , 0 
+              TWBYPIC -8 ,-19 , 1 , 128 
+              TWBYPIC -10 ,-4 , 1 , 0 
+              TWBYPIC  3 , 7 , 1 , 0 
+              TWBYPIC -10 , 9 , 1 , 0 
+              TWBYPIC -12 , 0 , 1 , 0 
+              TWBYPIC -3 ,-7 , 1 , 0 
+              TWBYPIC -5 , 10 , 1 , 0 
+              TWBYPIC  28 , 15 , 0 , 0 
+              TWBYPIC -20 ,-18 , 0 , 128 
+              TWBYPIC  5 ,-19 , 1 , 0 
+              TWBYPIC  17 , 10 , 1 , 0 
+              TWBYPIC -2 , 27 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB13:
+              TWBYPIC -26 ,-17 , 0 , 0 
+              TWBYPIC  6 , 19 , 1 , 0 
+              TWBYPIC  9 , 1 , 1 , 0 
+              TWBYPIC -3 ,-7 , 1 , 0 
+              TWBYPIC  7 , 2 , 1 , 0 
+              TWBYPIC  5 , 15 , 1 , 0 
+              TWBYPIC  11 , 22 , 1 , 0 
+              TWBYPIC  3 ,-1 , 1 , 0 
+              TWBYPIC -3 ,-24 , 1 , 0 
+              TWBYPIC -4 ,-16 , 1 , 0 
+              TWBYPIC  4 ,-5 , 1 , 0 
+              TWBYPIC  2 , 8 , 1 , 0 
+              TWBYPIC  7 ,-7 , 1 , 0 
+              TWBYPIC -6 ,-19 , 1 , 128 
+              TWBYPIC -10 ,-5 , 1 , 0 
+              TWBYPIC  3 , 8 , 1 , 0 
+              TWBYPIC -11 , 7 , 1 , 0 
+              TWBYPIC -12 , 0 , 1 , 0 
+              TWBYPIC -3 ,-8 , 1 , 0 
+              TWBYPIC -5 , 10 , 1 , 0 
+              TWBYPIC  26 , 17 , 0 , 0 
+              TWBYPIC -18 ,-19 , 0 , 128 
+              TWBYPIC  6 ,-19 , 1 , 0 
+              TWBYPIC  17 , 12 , 1 , 0 
+              TWBYPIC -5 , 26 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB14:
+              TWBYPIC -24 ,-20 , 0 , 0 
+              TWBYPIC  4 , 20 , 1 , 0 
+              TWBYPIC  8 , 2 , 1 , 0 
+              TWBYPIC -2 ,-7 , 1 , 0 
+              TWBYPIC  7 , 2 , 1 , 0 
+              TWBYPIC  3 , 16 , 1 , 0 
+              TWBYPIC  9 , 23 , 1 , 0 
+              TWBYPIC  4 ,-1 , 1 , 0 
+              TWBYPIC -1 ,-24 , 1 , 0 
+              TWBYPIC -3 ,-16 , 1 , 0 
+              TWBYPIC  5 ,-5 , 1 , 0 
+              TWBYPIC  2 , 8 , 1 , 0 
+              TWBYPIC  7 ,-6 , 1 , 0 
+              TWBYPIC -4 ,-19 , 1 , 128 
+              TWBYPIC -9 ,-7 , 1 , 0 
+              TWBYPIC  1 , 8 , 1 , 0 
+              TWBYPIC -11 , 6 , 1 , 0 
+              TWBYPIC -12 ,-1 , 1 , 0 
+              TWBYPIC -2 ,-8 , 1 , 0 
+              TWBYPIC -6 , 9 , 1 , 0 
+              TWBYPIC  24 , 20 , 0 , 0 
+              TWBYPIC -16 ,-21 , 0 , 128 
+              TWBYPIC  8 ,-18 , 1 , 0 
+              TWBYPIC  15 , 13 , 1 , 0 
+              TWBYPIC -7 , 26 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB15:
+              TWBYPIC -22 ,-22 , 0 , 0 
+              TWBYPIC  2 , 20 , 1 , 0 
+              TWBYPIC  8 , 3 , 1 , 0 
+              TWBYPIC -1 ,-8 , 1 , 0 
+              TWBYPIC  7 , 4 , 1 , 0 
+              TWBYPIC  1 , 16 , 1 , 0 
+              TWBYPIC  7 , 23 , 1 , 0 
+              TWBYPIC  4 , 0 , 1 , 0 
+              TWBYPIC  1 ,-25 , 1 , 0 
+              TWBYPIC -1 ,-16 , 1 , 0 
+              TWBYPIC  5 ,-4 , 1 , 0 
+              TWBYPIC  1 , 8 , 1 , 0 
+              TWBYPIC  8 ,-5 , 1 , 0 
+              TWBYPIC -2 ,-20 , 1 , 128 
+              TWBYPIC -9 ,-7 , 1 , 0 
+              TWBYPIC  1 , 8 , 1 , 0 
+              TWBYPIC -12 , 5 , 1 , 0 
+              TWBYPIC -12 ,-3 , 1 , 0 
+              TWBYPIC -1 ,-8 , 1 , 0 
+              TWBYPIC -7 , 9 , 1 , 0 
+              TWBYPIC  22 , 22 , 0 , 0 
+              TWBYPIC -14 ,-23 , 0 , 128 
+              TWBYPIC  10 ,-17 , 1 , 0 
+              TWBYPIC  14 , 15 , 1 , 0 
+              TWBYPIC -10 , 25 , 0 , 0 
+              PICEND
+CRPAGE .LENGTH
+SHPB16:
+              TWBYPIC -20 ,-24 , 0 , 0 
+              TWBYPIC  0 , 20 , 1 , 0 
+              TWBYPIC  8 , 4 , 1 , 0 
+              TWBYPIC -1 ,-8 , 1 , 0 
+              TWBYPIC  7 , 4 , 1 , 0 
+              TWBYPIC  0 , 16 , 1 , 0 
+              TWBYPIC  4 , 24 , 1 , 0 
+              TWBYPIC  4 , 0 , 1 , 0 
+              TWBYPIC  4 ,-24 , 1 , 0 
+              TWBYPIC  0 ,-16 , 1 , 0 
+              TWBYPIC  6 ,-4 , 1 , 0 
+              TWBYPIC  0 , 8 , 1 , 0 
+              TWBYPIC  8 ,-4 , 1 , 0 
+              TWBYPIC  0 ,-20 , 1 , 128 
+              TWBYPIC -8 ,-8 , 1 , 0 
+              TWBYPIC  0 , 8 , 1 , 0 
+              TWBYPIC -12 , 4 , 1 , 0 
+              TWBYPIC -12 ,-4 , 1 , 0 
+              TWBYPIC  0 ,-8 , 1 , 0 
+              TWBYPIC -8 , 8 , 1 , 0 
+              TWBYPIC  20 , 24 , 0 , 0 
+              TWBYPIC -12 ,-24 , 0 , 128 
+              TWBYPIC  12 ,-16 , 1 , 0 
+              TWBYPIC  12 , 16 , 1 , 0 
+              TWBYPIC -12 , 24 , 0 , 0 
+              PICEND
+	.RADIX 16
+R	=2FFF-.
+	.NLIST
+	.REPT R
+	.BYTE 0
+	.ENDR
+	.LIST
+	.=2FFF
+CKUM0::	.BYTE 8A
+	.END
+                                                                                                                                                     
